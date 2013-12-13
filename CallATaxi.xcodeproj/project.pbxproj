@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A6EC2A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC29185B6D3000F3BCE1 /* Foundation.framework */; };
+		26A6EC2C185B6D3000F3BCE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */; };
+		26A6EC2E185B6D3000F3BCE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */; };
+		26A6EC34185B6D3000F3BCE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26A6EC32185B6D3000F3BCE1 /* InfoPlist.strings */; };
+		26A6EC36185B6D3000F3BCE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC35185B6D3000F3BCE1 /* main.m */; };
+		26A6EC3A185B6D3000F3BCE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */; };
+		26A6EC3D185B6D3000F3BCE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A6EC3B185B6D3000F3BCE1 /* Main.storyboard */; };
+		26A6EC40185B6D3000F3BCE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC3F185B6D3000F3BCE1 /* ViewController.m */; };
+		26A6EC42185B6D3000F3BCE1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A6EC41185B6D3000F3BCE1 /* Images.xcassets */; };
+		26A6EC49185B6D3000F3BCE1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC48185B6D3000F3BCE1 /* XCTest.framework */; };
+		26A6EC4A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC29185B6D3000F3BCE1 /* Foundation.framework */; };
+		26A6EC4B185B6D3000F3BCE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */; };
+		26A6EC53185B6D3000F3BCE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26A6EC51185B6D3000F3BCE1 /* InfoPlist.strings */; };
+		26A6EC55185B6D3000F3BCE1 /* CallATaxiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC54185B6D3000F3BCE1 /* CallATaxiTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26A6EC4C185B6D3000F3BCE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26A6EC1E185B6D3000F3BCE1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26A6EC25185B6D3000F3BCE1;
+			remoteInfo = CallATaxi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		26A6EC26185B6D3000F3BCE1 /* CallATaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallATaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A6EC29185B6D3000F3BCE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		26A6EC31185B6D3000F3BCE1 /* CallATaxi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CallATaxi-Info.plist"; sourceTree = "<group>"; };
+		26A6EC33185B6D3000F3BCE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26A6EC35185B6D3000F3BCE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		26A6EC37185B6D3000F3BCE1 /* CallATaxi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CallATaxi-Prefix.pch"; sourceTree = "<group>"; };
+		26A6EC38185B6D3000F3BCE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		26A6EC3C185B6D3000F3BCE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		26A6EC3E185B6D3000F3BCE1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		26A6EC3F185B6D3000F3BCE1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		26A6EC41185B6D3000F3BCE1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		26A6EC47185B6D3000F3BCE1 /* CallATaxiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallATaxiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26A6EC48185B6D3000F3BCE1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		26A6EC50185B6D3000F3BCE1 /* CallATaxiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CallATaxiTests-Info.plist"; sourceTree = "<group>"; };
+		26A6EC52185B6D3000F3BCE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		26A6EC54185B6D3000F3BCE1 /* CallATaxiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallATaxiTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26A6EC23185B6D3000F3BCE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A6EC2C185B6D3000F3BCE1 /* CoreGraphics.framework in Frameworks */,
+				26A6EC2E185B6D3000F3BCE1 /* UIKit.framework in Frameworks */,
+				26A6EC2A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A6EC44185B6D3000F3BCE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A6EC49185B6D3000F3BCE1 /* XCTest.framework in Frameworks */,
+				26A6EC4B185B6D3000F3BCE1 /* UIKit.framework in Frameworks */,
+				26A6EC4A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26A6EC1D185B6D3000F3BCE1 = {
+			isa = PBXGroup;
+			children = (
+				26A6EC2F185B6D3000F3BCE1 /* CallATaxi */,
+				26A6EC4E185B6D3000F3BCE1 /* CallATaxiTests */,
+				26A6EC28185B6D3000F3BCE1 /* Frameworks */,
+				26A6EC27185B6D3000F3BCE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		26A6EC27185B6D3000F3BCE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26A6EC26185B6D3000F3BCE1 /* CallATaxi.app */,
+				26A6EC47185B6D3000F3BCE1 /* CallATaxiTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26A6EC28185B6D3000F3BCE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26A6EC29185B6D3000F3BCE1 /* Foundation.framework */,
+				26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */,
+				26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */,
+				26A6EC48185B6D3000F3BCE1 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26A6EC2F185B6D3000F3BCE1 /* CallATaxi */ = {
+			isa = PBXGroup;
+			children = (
+				26A6EC38185B6D3000F3BCE1 /* AppDelegate.h */,
+				26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */,
+				26A6EC3B185B6D3000F3BCE1 /* Main.storyboard */,
+				26A6EC3E185B6D3000F3BCE1 /* ViewController.h */,
+				26A6EC3F185B6D3000F3BCE1 /* ViewController.m */,
+				26A6EC41185B6D3000F3BCE1 /* Images.xcassets */,
+				26A6EC30185B6D3000F3BCE1 /* Supporting Files */,
+			);
+			path = CallATaxi;
+			sourceTree = "<group>";
+		};
+		26A6EC30185B6D3000F3BCE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26A6EC31185B6D3000F3BCE1 /* CallATaxi-Info.plist */,
+				26A6EC32185B6D3000F3BCE1 /* InfoPlist.strings */,
+				26A6EC35185B6D3000F3BCE1 /* main.m */,
+				26A6EC37185B6D3000F3BCE1 /* CallATaxi-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26A6EC4E185B6D3000F3BCE1 /* CallATaxiTests */ = {
+			isa = PBXGroup;
+			children = (
+				26A6EC54185B6D3000F3BCE1 /* CallATaxiTests.m */,
+				26A6EC4F185B6D3000F3BCE1 /* Supporting Files */,
+			);
+			path = CallATaxiTests;
+			sourceTree = "<group>";
+		};
+		26A6EC4F185B6D3000F3BCE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26A6EC50185B6D3000F3BCE1 /* CallATaxiTests-Info.plist */,
+				26A6EC51185B6D3000F3BCE1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		26A6EC25185B6D3000F3BCE1 /* CallATaxi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A6EC58185B6D3000F3BCE1 /* Build configuration list for PBXNativeTarget "CallATaxi" */;
+			buildPhases = (
+				26A6EC22185B6D3000F3BCE1 /* Sources */,
+				26A6EC23185B6D3000F3BCE1 /* Frameworks */,
+				26A6EC24185B6D3000F3BCE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CallATaxi;
+			productName = CallATaxi;
+			productReference = 26A6EC26185B6D3000F3BCE1 /* CallATaxi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26A6EC46185B6D3000F3BCE1 /* CallATaxiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26A6EC5B185B6D3000F3BCE1 /* Build configuration list for PBXNativeTarget "CallATaxiTests" */;
+			buildPhases = (
+				26A6EC43185B6D3000F3BCE1 /* Sources */,
+				26A6EC44185B6D3000F3BCE1 /* Frameworks */,
+				26A6EC45185B6D3000F3BCE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26A6EC4D185B6D3000F3BCE1 /* PBXTargetDependency */,
+			);
+			name = CallATaxiTests;
+			productName = CallATaxiTests;
+			productReference = 26A6EC47185B6D3000F3BCE1 /* CallATaxiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26A6EC1E185B6D3000F3BCE1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = minkovit;
+				TargetAttributes = {
+					26A6EC46185B6D3000F3BCE1 = {
+						TestTargetID = 26A6EC25185B6D3000F3BCE1;
+					};
+				};
+			};
+			buildConfigurationList = 26A6EC21185B6D3000F3BCE1 /* Build configuration list for PBXProject "CallATaxi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26A6EC1D185B6D3000F3BCE1;
+			productRefGroup = 26A6EC27185B6D3000F3BCE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26A6EC25185B6D3000F3BCE1 /* CallATaxi */,
+				26A6EC46185B6D3000F3BCE1 /* CallATaxiTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26A6EC24185B6D3000F3BCE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A6EC42185B6D3000F3BCE1 /* Images.xcassets in Resources */,
+				26A6EC34185B6D3000F3BCE1 /* InfoPlist.strings in Resources */,
+				26A6EC3D185B6D3000F3BCE1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A6EC45185B6D3000F3BCE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A6EC53185B6D3000F3BCE1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26A6EC22185B6D3000F3BCE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A6EC40185B6D3000F3BCE1 /* ViewController.m in Sources */,
+				26A6EC3A185B6D3000F3BCE1 /* AppDelegate.m in Sources */,
+				26A6EC36185B6D3000F3BCE1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26A6EC43185B6D3000F3BCE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26A6EC55185B6D3000F3BCE1 /* CallATaxiTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26A6EC4D185B6D3000F3BCE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26A6EC25185B6D3000F3BCE1 /* CallATaxi */;
+			targetProxy = 26A6EC4C185B6D3000F3BCE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		26A6EC32185B6D3000F3BCE1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26A6EC33185B6D3000F3BCE1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		26A6EC3B185B6D3000F3BCE1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26A6EC3C185B6D3000F3BCE1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		26A6EC51185B6D3000F3BCE1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				26A6EC52185B6D3000F3BCE1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		26A6EC56185B6D3000F3BCE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		26A6EC57185B6D3000F3BCE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26A6EC59185B6D3000F3BCE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
+				INFOPLIST_FILE = "CallATaxi/CallATaxi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		26A6EC5A185B6D3000F3BCE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
+				INFOPLIST_FILE = "CallATaxi/CallATaxi-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		26A6EC5C185B6D3000F3BCE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CallATaxi.app/CallATaxi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CallATaxiTests/CallATaxiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		26A6EC5D185B6D3000F3BCE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CallATaxi.app/CallATaxi";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
+				INFOPLIST_FILE = "CallATaxiTests/CallATaxiTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26A6EC21185B6D3000F3BCE1 /* Build configuration list for PBXProject "CallATaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A6EC56185B6D3000F3BCE1 /* Debug */,
+				26A6EC57185B6D3000F3BCE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26A6EC58185B6D3000F3BCE1 /* Build configuration list for PBXNativeTarget "CallATaxi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A6EC59185B6D3000F3BCE1 /* Debug */,
+				26A6EC5A185B6D3000F3BCE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		26A6EC5B185B6D3000F3BCE1 /* Build configuration list for PBXNativeTarget "CallATaxiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26A6EC5C185B6D3000F3BCE1 /* Debug */,
+				26A6EC5D185B6D3000F3BCE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 26A6EC1E185B6D3000F3BCE1 /* Project object */;
+}
