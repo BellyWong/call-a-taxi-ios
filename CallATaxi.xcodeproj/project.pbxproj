@@ -14,13 +14,17 @@
 		26A6EC36185B6D3000F3BCE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC35185B6D3000F3BCE1 /* main.m */; };
 		26A6EC3A185B6D3000F3BCE1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */; };
 		26A6EC3D185B6D3000F3BCE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26A6EC3B185B6D3000F3BCE1 /* Main.storyboard */; };
-		26A6EC40185B6D3000F3BCE1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC3F185B6D3000F3BCE1 /* ViewController.m */; };
 		26A6EC42185B6D3000F3BCE1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A6EC41185B6D3000F3BCE1 /* Images.xcassets */; };
 		26A6EC49185B6D3000F3BCE1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC48185B6D3000F3BCE1 /* XCTest.framework */; };
 		26A6EC4A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC29185B6D3000F3BCE1 /* Foundation.framework */; };
 		26A6EC4B185B6D3000F3BCE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */; };
 		26A6EC53185B6D3000F3BCE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26A6EC51185B6D3000F3BCE1 /* InfoPlist.strings */; };
 		26A6EC55185B6D3000F3BCE1 /* CallATaxiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC54185B6D3000F3BCE1 /* CallATaxiTests.m */; };
+		26A6EC60185B6FBC00F3BCE1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A6EC5F185B6FBC00F3BCE1 /* HomeViewController.m */; };
+		26B168EE1861C21F00A9903C /* TaxisTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B168ED1861C21F00A9903C /* TaxisTableViewController.m */; };
+		26B168F21862ECAA00A9903C /* CityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B168F11862ECAA00A9903C /* CityModel.m */; };
+		26B168F51862F40C00A9903C /* TaxiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B168F41862F40C00A9903C /* TaxiModel.m */; };
+		26B168F918631BD600A9903C /* TaxiDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26B168F818631BD600A9903C /* TaxiDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +49,22 @@
 		26A6EC38185B6D3000F3BCE1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		26A6EC3C185B6D3000F3BCE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		26A6EC3E185B6D3000F3BCE1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		26A6EC3F185B6D3000F3BCE1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		26A6EC41185B6D3000F3BCE1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		26A6EC47185B6D3000F3BCE1 /* CallATaxiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CallATaxiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A6EC48185B6D3000F3BCE1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		26A6EC50185B6D3000F3BCE1 /* CallATaxiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CallATaxiTests-Info.plist"; sourceTree = "<group>"; };
 		26A6EC52185B6D3000F3BCE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26A6EC54185B6D3000F3BCE1 /* CallATaxiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallATaxiTests.m; sourceTree = "<group>"; };
+		26A6EC5E185B6FBC00F3BCE1 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		26A6EC5F185B6FBC00F3BCE1 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		26B168EC1861C21F00A9903C /* TaxisTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxisTableViewController.h; sourceTree = "<group>"; };
+		26B168ED1861C21F00A9903C /* TaxisTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxisTableViewController.m; sourceTree = "<group>"; };
+		26B168F01862ECAA00A9903C /* CityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityModel.h; sourceTree = "<group>"; };
+		26B168F11862ECAA00A9903C /* CityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityModel.m; sourceTree = "<group>"; };
+		26B168F31862F40C00A9903C /* TaxiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxiModel.h; sourceTree = "<group>"; };
+		26B168F41862F40C00A9903C /* TaxiModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxiModel.m; sourceTree = "<group>"; };
+		26B168F718631BD600A9903C /* TaxiDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxiDetailsViewController.h; sourceTree = "<group>"; };
+		26B168F818631BD600A9903C /* TaxiDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxiDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,13 +124,18 @@
 		26A6EC2F185B6D3000F3BCE1 /* CallATaxi */ = {
 			isa = PBXGroup;
 			children = (
+				26B168EF1862EC9A00A9903C /* Models */,
 				26A6EC38185B6D3000F3BCE1 /* AppDelegate.h */,
 				26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */,
 				26A6EC3B185B6D3000F3BCE1 /* Main.storyboard */,
-				26A6EC3E185B6D3000F3BCE1 /* ViewController.h */,
-				26A6EC3F185B6D3000F3BCE1 /* ViewController.m */,
 				26A6EC41185B6D3000F3BCE1 /* Images.xcassets */,
 				26A6EC30185B6D3000F3BCE1 /* Supporting Files */,
+				26A6EC5E185B6FBC00F3BCE1 /* HomeViewController.h */,
+				26A6EC5F185B6FBC00F3BCE1 /* HomeViewController.m */,
+				26B168EC1861C21F00A9903C /* TaxisTableViewController.h */,
+				26B168ED1861C21F00A9903C /* TaxisTableViewController.m */,
+				26B168F718631BD600A9903C /* TaxiDetailsViewController.h */,
+				26B168F818631BD600A9903C /* TaxiDetailsViewController.m */,
 			);
 			path = CallATaxi;
 			sourceTree = "<group>";
@@ -150,6 +167,17 @@
 				26A6EC51185B6D3000F3BCE1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26B168EF1862EC9A00A9903C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				26B168F01862ECAA00A9903C /* CityModel.h */,
+				26B168F11862ECAA00A9903C /* CityModel.m */,
+				26B168F31862F40C00A9903C /* TaxiModel.h */,
+				26B168F41862F40C00A9903C /* TaxiModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +277,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A6EC40185B6D3000F3BCE1 /* ViewController.m in Sources */,
 				26A6EC3A185B6D3000F3BCE1 /* AppDelegate.m in Sources */,
+				26B168EE1861C21F00A9903C /* TaxisTableViewController.m in Sources */,
 				26A6EC36185B6D3000F3BCE1 /* main.m in Sources */,
+				26B168F918631BD600A9903C /* TaxiDetailsViewController.m in Sources */,
+				26B168F21862ECAA00A9903C /* CityModel.m in Sources */,
+				26B168F51862F40C00A9903C /* TaxiModel.m in Sources */,
+				26A6EC60185B6FBC00F3BCE1 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
 				INFOPLIST_FILE = "CallATaxi/CallATaxi-Info.plist";
@@ -391,6 +424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
 				INFOPLIST_FILE = "CallATaxi/CallATaxi-Info.plist";
@@ -460,6 +494,7 @@
 				26A6EC5A185B6D3000F3BCE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		26A6EC5B185B6D3000F3BCE1 /* Build configuration list for PBXNativeTarget "CallATaxiTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +503,7 @@
 				26A6EC5D185B6D3000F3BCE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
