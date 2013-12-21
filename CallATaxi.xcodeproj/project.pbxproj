@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2608CF221865C52B000A152E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2608CF211865C52B000A152E /* AddressBook.framework */; };
+		2608CF241865C535000A152E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2608CF231865C535000A152E /* AddressBookUI.framework */; };
 		26A6EC2A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC29185B6D3000F3BCE1 /* Foundation.framework */; };
 		26A6EC2C185B6D3000F3BCE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */; };
 		26A6EC2E185B6D3000F3BCE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2608CF211865C52B000A152E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		2608CF231865C535000A152E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		26A6EC26185B6D3000F3BCE1 /* CallATaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallATaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A6EC29185B6D3000F3BCE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -72,6 +76,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2608CF241865C535000A152E /* AddressBookUI.framework in Frameworks */,
+				2608CF221865C52B000A152E /* AddressBook.framework in Frameworks */,
 				26A6EC2C185B6D3000F3BCE1 /* CoreGraphics.framework in Frameworks */,
 				26A6EC2E185B6D3000F3BCE1 /* UIKit.framework in Frameworks */,
 				26A6EC2A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */,
@@ -91,6 +97,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2608CF201865C0FF000A152E /* images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		26A6EC1D185B6D3000F3BCE1 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,8 @@
 		26A6EC28185B6D3000F3BCE1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2608CF231865C535000A152E /* AddressBookUI.framework */,
+				2608CF211865C52B000A152E /* AddressBook.framework */,
 				26A6EC29185B6D3000F3BCE1 /* Foundation.framework */,
 				26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */,
 				26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */,
@@ -124,6 +139,7 @@
 		26A6EC2F185B6D3000F3BCE1 /* CallATaxi */ = {
 			isa = PBXGroup;
 			children = (
+				2608CF201865C0FF000A152E /* images */,
 				26B168EF1862EC9A00A9903C /* Models */,
 				26A6EC38185B6D3000F3BCE1 /* AppDelegate.h */,
 				26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */,
@@ -414,6 +430,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
 				INFOPLIST_FILE = "CallATaxi/CallATaxi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -428,6 +445,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CallATaxi/CallATaxi-Prefix.pch";
 				INFOPLIST_FILE = "CallATaxi/CallATaxi-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

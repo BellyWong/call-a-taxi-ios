@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "TaxiModel.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
 
-@interface TaxiDetailsViewController : UIViewController
+@interface TaxiDetailsViewController : UIViewController<ABPeoplePickerNavigationControllerDelegate>
 
 @property (strong, nonatomic) TaxiModel *taxi;
 
@@ -19,5 +21,6 @@
 - (IBAction)visitSiteTapped:(id)sender;
 - (IBAction)likeTapped:(id)sender;
 - (IBAction)dislikeTapped:(id)sender;
+- (IBAction)saveTapped:(id)sender;
 
 @end

@@ -50,19 +50,17 @@
 
 - (IBAction)callTapped:(id)sender{
     NSString *telStr =[NSString stringWithFormat:@"tel:%@",self.taxi.tel];
-    NSLog(telStr);
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:telStr]];
 }
 - (IBAction)visitSiteTapped:(id)sender{
-    
 }
 - (IBAction)likeTapped:(id)sender{
-    
-}
-- (IBAction)dislikeTapped:(id)sender{
-    
 }
 
+- (IBAction)saveTapped:(id)sender {
+}
+- (IBAction)dislikeTapped:(id)sender{
+}
 
 - (void)didReceiveMemoryWarning
 {

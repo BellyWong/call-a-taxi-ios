@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TaxiModel.h";
+#import "TaxiModel.h"
 
 @interface CityModel : NSObject
 
