@@ -35,28 +35,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(!persister){
+        persister = [[DataPersister alloc] init];
+        persister.delegate = self;
+    }
     [self getCurrentLocation];
     [self initServer];
     self.title = @"Home";
 }
 
--(void) connection:(NSURLConnection *) connection didReceiveData:(NSData *)data{
-    NSDictionary *responseData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog (@"%@",responseData);
-    });
-}
-
 -(void) initServer{
     NSString *urlString = @"http://callataxi.apphb.com/api/init";
-    NSMutableURLRequest *request= [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-    [request setHTTPMethod:@"GET"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    [request addValue:@"test-phoneid" forHTTPHeaderField:@"x-phoneId"];
-    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-                               NSLog(@"Server is up and running");
-                           }];
+    [persister fetchData:urlString withAlias:@"initserver"];
 }
 
 -(void) getCurrentLocation{
@@ -82,21 +72,10 @@
 
 -(void) loadLocationFromServer{
     NSString *url = [NSString stringWithFormat:@"http://callataxi.apphb.com/api/cities?location=%f;%f", location.coordinate.latitude, location.coordinate.longitude];
+    
     //NSString *url =@"http://callataxi.apphb.com/api/cities";
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
-    [request setHTTPMethod:@"GET"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Accepts"];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc]init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        
-        NSArray *citiesDictionaries = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        self.cities = [CityModel getModelsFromDictionaries:citiesDictionaries];
-        self.city =  [self.cities firstObject];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            cityLabel.text =  self.city.name;
-        });
-    }];
+    [persister fetchData:url withAlias:@"getcities"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -161,4 +140,18 @@
     }
 }
 
+-(void) didReceiveData: (NSDictionary *) data withAlias:(NSString *) alias{
+    if([alias isEqualToString:@"initserver"]){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Server is up and running");
+        });
+    }
+    else if([alias isEqualToString:@"getcities"]){
+        self.cities = [CityModel getModelsFromDictionaries:(NSArray *)data];
+        self.city =  [self.cities firstObject];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cityLabel.text =  self.city.name;
+        });
+    }
+}
 @end

@@ -8,14 +8,32 @@
 
 #import <UIKit/UIKit.h>
 #import "TaxiModel.h"
+#import "DataPersister.h"
 #import <AddressBook/AddressBook.h>
-#import <AddressBookUI/AddressBookUI.h>
 
-@interface TaxiDetailsViewController : UIViewController<ABPeoplePickerNavigationControllerDelegate>
+@interface TaxiDetailsViewController : UIViewController<DataPersisterDelegate>
+{
+    DataPersister *persister;
+}
 
 @property (strong, nonatomic) TaxiModel *taxi;
 
+@property (strong, nonatomic) UIView* loadingDataView;
+
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *initialDailyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *initialNIghtlyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *perKmDailyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *perKmNightlyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *perMinDailyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *perMinNightlyLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *bookingDailyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bookingNightlyLabel;
+
 
 - (IBAction)callTapped:(id)sender;
 - (IBAction)visitSiteTapped:(id)sender;

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2608CF221865C52B000A152E /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2608CF211865C52B000A152E /* AddressBook.framework */; };
 		2608CF241865C535000A152E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2608CF231865C535000A152E /* AddressBookUI.framework */; };
+		267EEFA51865F8E20072E158 /* DataPersister.m in Sources */ = {isa = PBXBuildFile; fileRef = 267EEFA41865F8E20072E158 /* DataPersister.m */; };
 		26A6EC2A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC29185B6D3000F3BCE1 /* Foundation.framework */; };
 		26A6EC2C185B6D3000F3BCE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */; };
 		26A6EC2E185B6D3000F3BCE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2D185B6D3000F3BCE1 /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		2608CF211865C52B000A152E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		2608CF231865C535000A152E /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		267EEFA31865F8E20072E158 /* DataPersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPersister.h; sourceTree = "<group>"; };
+		267EEFA41865F8E20072E158 /* DataPersister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPersister.m; sourceTree = "<group>"; };
 		26A6EC26185B6D3000F3BCE1 /* CallATaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallATaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A6EC29185B6D3000F3BCE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,13 +100,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2608CF201865C0FF000A152E /* images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = images;
-			sourceTree = "<group>";
-		};
 		26A6EC1D185B6D3000F3BCE1 = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +135,6 @@
 		26A6EC2F185B6D3000F3BCE1 /* CallATaxi */ = {
 			isa = PBXGroup;
 			children = (
-				2608CF201865C0FF000A152E /* images */,
 				26B168EF1862EC9A00A9903C /* Models */,
 				26A6EC38185B6D3000F3BCE1 /* AppDelegate.h */,
 				26A6EC39185B6D3000F3BCE1 /* AppDelegate.m */,
@@ -152,6 +147,8 @@
 				26B168ED1861C21F00A9903C /* TaxisTableViewController.m */,
 				26B168F718631BD600A9903C /* TaxiDetailsViewController.h */,
 				26B168F818631BD600A9903C /* TaxiDetailsViewController.m */,
+				267EEFA31865F8E20072E158 /* DataPersister.h */,
+				267EEFA41865F8E20072E158 /* DataPersister.m */,
 			);
 			path = CallATaxi;
 			sourceTree = "<group>";
@@ -298,6 +295,7 @@
 				26A6EC36185B6D3000F3BCE1 /* main.m in Sources */,
 				26B168F918631BD600A9903C /* TaxiDetailsViewController.m in Sources */,
 				26B168F21862ECAA00A9903C /* CityModel.m in Sources */,
+				267EEFA51865F8E20072E158 /* DataPersister.m in Sources */,
 				26B168F51862F40C00A9903C /* TaxiModel.m in Sources */,
 				26A6EC60185B6FBC00F3BCE1 /* HomeViewController.m in Sources */,
 			);

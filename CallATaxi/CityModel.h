@@ -14,6 +14,7 @@
 @property int cityId;
 @property (strong,nonatomic) NSString *name;
 @property (strong,nonatomic) NSString *country;
+
 @property double latitude;
 @property double longitude;
 @property (strong,nonatomic) NSArray *taxis;

@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "CityModel.h"
+#import "DataPersister.h"
 
-@interface HomeViewController : UIViewController<CLLocationManagerDelegate, UIPickerViewDelegate>
+@interface HomeViewController : UIViewController<CLLocationManagerDelegate, UIPickerViewDelegate,DataPersisterDelegate>
 {
     CLLocationManager *locationManager;
     NSURLConnection *connection;
     CLLocation *location;
+    DataPersister *persister;
 }
 @property (strong,nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong,nonatomic) IBOutlet UILabel *cityLabel;

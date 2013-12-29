@@ -9,8 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "CityModel.h"
 #import "TaxiModel.h"
+#import "DataPersister.h"
 
-@interface TaxisTableViewController : UITableViewController
+@interface TaxisTableViewController : UITableViewController<DataPersisterDelegate>
+{
+    DataPersister *persister;
+}
 
 @property (strong, nonatomic) CityModel *city;
 

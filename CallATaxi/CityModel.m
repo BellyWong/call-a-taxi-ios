@@ -41,6 +41,7 @@
     if(self){
         self.cityId = [[dict objectForKey:@"Id"] integerValue];
         self.name = [dict objectForKey:@"Name"];
+        
         if([dict objectForKey:@"Country"]){
             self.country = [dict objectForKey:@"Country"];
         }

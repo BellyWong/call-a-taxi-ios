@@ -29,25 +29,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(!persister){
+        persister = [[DataPersister alloc] init];
+        persister.delegate = self;
+    }
     self.title =[NSString stringWithFormat:@"Taxis in %@",self.city.name];
     [self loadTaxisForCity];
 }
 
 -(void) loadTaxisForCity {
-    int cityId = self.city.cityId;
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://callataxi.apphb.com/api/cities/%d", cityId]];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    
-    [request setHTTPMethod:@"GET"];
-    [request addValue:@"application/json" forHTTPHeaderField:@"Accepts"];
-    
-    [NSURLConnection sendAsynchronousRequest:request queue:[[NSOperationQueue alloc] init] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        NSDictionary *cityDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        self.city = [[CityModel alloc] initWithDictionary:cityDict];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    }];
+    NSString *url = [NSString stringWithFormat:@"http://callataxi.apphb.com/api/cities/%d",self.city.cityId];
+    [persister fetchData:url withAlias:@"gettaxis"];
 }
 
 -(NSInteger) numberOfSectionsInTableView:(UITableView *)tableView{
@@ -74,6 +66,15 @@
         long selectedIndex = [[self.tableView indexPathForSelectedRow] row];
         TaxiModel *selectedTaxi = [self.city.taxis objectAtIndex:selectedIndex];
         vc.taxi = selectedTaxi;
+    }
+}
+
+-(void) didReceiveData:(NSDictionary *)data withAlias:(NSString *)alias{
+    if([alias isEqualToString:@"gettaxis"]){
+        self.city = [[CityModel alloc] initWithDictionary:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
     }
 }
 
