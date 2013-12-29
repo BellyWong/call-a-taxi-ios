@@ -35,10 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(!persister){
-        persister = [[DataPersister alloc] init];
-        persister.delegate = self;
-    }
+    persister.delegate = self;
     [self getCurrentLocation];
     [self initServer];
     self.title = @"Home";
@@ -152,6 +149,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             cityLabel.text =  self.city.name;
         });
+        [self.loadingDataView removeFromSuperview];
     }
 }
 @end

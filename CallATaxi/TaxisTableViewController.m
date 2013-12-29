@@ -29,10 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(!persister){
-        persister = [[DataPersister alloc] init];
-        persister.delegate = self;
-    }
+    persister.delegate = self;
     self.title =[NSString stringWithFormat:@"Taxis in %@",self.city.name];
     [self loadTaxisForCity];
 }
@@ -75,6 +72,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
+        [self.loadingDataView removeFromSuperview];
     }
 }
 

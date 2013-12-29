@@ -43,38 +43,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(!persister){
-        persister = [[DataPersister alloc] init];
-        persister.delegate = self;
-    }
+    persister.delegate = self;
     self.title = self.taxi.name;
     [self loadTaxiDetails];
     
-    [self initActivityIndicator];
     [self.view addSubview:self.loadingDataView];
-}
-
--(void) initActivityIndicator{
-    self.loadingDataView = [[UIView alloc] initWithFrame:CGRectMake(0, 44, 320, 367)];
-    //loadingDataView.alpha = 0.4;
-    self.loadingDataView.backgroundColor = [UIColor colorWithRed:55 green:55 blue:55 alpha:0.4f];
-    UIView *viewWithSpinner = [[UIView alloc] initWithFrame:CGRectMake(110, 106, 100, 100)];
-    [viewWithSpinner.layer setCornerRadius:15.0f];
-    viewWithSpinner.backgroundColor = [UIColor blackColor];
-    UILabel *msg = [[UILabel alloc] initWithFrame:CGRectMake(5, 75, 90, 20)];
-    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(5, 5, 90, 70)];
-    spinner.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
-    [spinner startAnimating];
-    msg.text = @"Loading Data";
-    msg.font = [UIFont systemFontOfSize:14];
-    msg.textAlignment = NSTextAlignmentCenter;
-    msg.textColor = [UIColor whiteColor];
-    msg.backgroundColor = [UIColor clearColor];
-    viewWithSpinner.opaque = NO;
-    viewWithSpinner.backgroundColor = [UIColor blackColor];
-    [viewWithSpinner addSubview:spinner];
-    [viewWithSpinner addSubview:msg];
-    [self.loadingDataView addSubview:viewWithSpinner];
 }
 
 -(void) loadTaxiDetails{
@@ -96,6 +69,7 @@
         self.perKmNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyPerKm];
         self.perMinNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyPerMinute];
         self.bookingNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyBooking];
+        [self.loadingDataView removeFromSuperview];
     });
 }
 
@@ -142,22 +116,22 @@
 
 -(BOOL) saveTaxiToAddressBook{
     CFErrorRef error = NULL;
-    ABAddressBookRef iPhoneAddressBook = ABAddressBookCreateWithOptions(NULL,nil);
+    ABAddressBookRef iPhoneAddressBook = ABAddressBookCreateWithOptions(NULL, &error);
     
-    ABRecordRef newPerson = ABPersonCreate();
+    ABRecordRef newTaxiContact = ABPersonCreate();
     
-    ABRecordSetValue(newPerson, kABPersonFirstNameProperty, (__bridge CFTypeRef)(self.taxi.name), &error);
-    ABRecordSetValue(newPerson, kABPersonLastNameProperty, @"taxi", &error);
+    ABRecordSetValue(newTaxiContact, kABPersonFirstNameProperty, (__bridge CFTypeRef)(self.taxi.name), &error);
+    ABRecordSetValue(newTaxiContact, kABPersonLastNameProperty, @"taxi", &error);
     
-    ABMutableMultiValueRef multiPhone =     ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMutableMultiValueRef multiPhone = ABMultiValueCreateMutable(kABMultiStringPropertyType);
     ABMultiValueAddValueAndLabel(multiPhone, (__bridge CFTypeRef)(self.taxi.tel), kABPersonPhoneMainLabel, NULL);
-    ABRecordSetValue(newPerson, kABPersonPhoneProperty, multiPhone,nil);
+    ABRecordSetValue(newTaxiContact, kABPersonPhoneProperty, multiPhone,nil);
     
     CFRelease(multiPhone);
-    ABAddressBookAddRecord(iPhoneAddressBook, newPerson, &error);
+    ABAddressBookAddRecord(iPhoneAddressBook, newTaxiContact, &error);
     ABAddressBookSave(iPhoneAddressBook, &error);
     
-    CFRelease(newPerson);
+    CFRelease(newTaxiContact);
     CFRelease(iPhoneAddressBook);
     
     
@@ -176,13 +150,13 @@
     NSUInteger k;
     
     ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, nil);
-    NSArray *people = (__bridge NSArray *) ABAddressBookCopyArrayOfAllPeople(addressBook);
+    NSArray *contacts = (__bridge NSArray *) ABAddressBookCopyArrayOfAllPeople(addressBook);
     
-    for ( i=0; i<[people count]; i++ )
+    for (i=0; i<[contacts count]; i++ )
     {
-        ABRecordRef person = (__bridge ABRecordRef)[people objectAtIndex:i];
-        ABMutableMultiValueRef phoneNumbers = ABRecordCopyValue(person, kABPersonPhoneProperty);
-        CFIndex phoneNumberCount = ABMultiValueGetCount( phoneNumbers );
+        ABRecordRef contact = (__bridge ABRecordRef)[contacts objectAtIndex:i];
+        ABMutableMultiValueRef phoneNumbers = ABRecordCopyValue(contact, kABPersonPhoneProperty);
+        CFIndex phoneNumberCount = ABMultiValueGetCount(phoneNumbers );
         
         for ( k=0; k<phoneNumberCount; k++ )
         {
@@ -190,8 +164,9 @@
             CFStringRef phoneNumberValue = ABMultiValueCopyValueAtIndex( phoneNumbers, k );
             
             if([self.taxi.tel isEqualToString:(__bridge NSString *)(phoneNumberValue)]){
-                return YES;
+                
                 CFRelease(addressBook);
+                return YES;
             }
             
             CFRelease(phoneNumberLabel);

@@ -7,14 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseUIViewController.h"
 #import "TaxiModel.h"
 #import "DataPersister.h"
 #import <AddressBook/AddressBook.h>
 
-@interface TaxiDetailsViewController : UIViewController<DataPersisterDelegate>
-{
-    DataPersister *persister;
-}
+@interface TaxiDetailsViewController:BaseUIViewController<DataPersisterDelegate>
 
 @property (strong, nonatomic) TaxiModel *taxi;
 
