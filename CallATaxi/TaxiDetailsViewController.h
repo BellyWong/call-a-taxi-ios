@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseUIViewController.h"
+#import "CommentsTableViewController.h"
 #import "TaxiModel.h"
 #import "DataPersister.h"
 #import <AddressBook/AddressBook.h>
@@ -17,6 +18,7 @@
 @property (strong, nonatomic) TaxiModel *taxi;
 
 @property (strong, nonatomic) UIView* loadingDataView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *descLabel;
 
@@ -31,12 +33,15 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *bookingDailyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *bookingNightlyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ratingVotesLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *commentsButton;
 
 - (IBAction)callTapped:(id)sender;
 - (IBAction)visitSiteTapped:(id)sender;
 - (IBAction)likeTapped:(id)sender;
 - (IBAction)dislikeTapped:(id)sender;
 - (IBAction)saveTapped:(id)sender;
+- (IBAction)commentsTapped:(id)sender;
 
 @end

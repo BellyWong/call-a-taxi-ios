@@ -17,6 +17,7 @@
     CLLocationManager *locationManager;
     NSURLConnection *connection;
     CLLocation *location;
+    NSString *deviceId;
 }
 @property (strong,nonatomic) IBOutlet UILabel *locationLabel;
 @property (strong,nonatomic) IBOutlet UILabel *cityLabel;

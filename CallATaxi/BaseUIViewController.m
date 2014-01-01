@@ -19,6 +19,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
     }
     return self;
 }
@@ -27,11 +28,28 @@
 {
     [super viewDidLoad];
     if(!persister){
-        persister = [[DataPersister alloc] init];
+        NSString *deviceId =[NSString stringWithFormat:@"%@",[[[UIDevice currentDevice]identifierForVendor] UUIDString]];
+        NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
+        [headers setObject:[self encryptDeviceId:deviceId] forKey:@"X-phoneId"];
+        persister = [[DataPersister alloc] initWithHeaders:headers];
     }
     
     [self initActivityIndicator];
 	// Do any additional setup after loading the view.
+}
+
+-(NSString*) encryptDeviceId: (NSString*) deviceId{
+    unsigned char digest[CC_SHA1_DIGEST_LENGTH];
+    NSData *stringBytes = [deviceId dataUsingEncoding: NSUTF8StringEncoding]; /* or some other encoding */
+    if (CC_SHA1([stringBytes bytes], [stringBytes length], digest)) {
+        NSMutableString* sha1 = [[NSMutableString alloc] init];
+        for (int i = 0 ; i < CC_SHA1_DIGEST_LENGTH ; ++i)
+        {
+            [sha1 appendFormat: @"%02x", digest[i]];
+        }
+        return sha1;
+    }
+    return @"";
 }
 
 -(void) initActivityIndicator{

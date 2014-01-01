@@ -12,8 +12,8 @@
 
 @synthesize taxiId;
 @synthesize name;
-@synthesize likes;
-@synthesize dislikes;
+@synthesize totalVotes;
+@synthesize rating;
 @synthesize desc;
 @synthesize fares;
 @synthesize tel;
@@ -49,14 +49,23 @@
          NightlyKmFare = "0.99";
          NightlyMinFare = "0.26";
          Telephone = 0878810810;
-
          */
         self.taxiId = [[dict objectForKey:@"Id"] integerValue];
         self.name = [dict objectForKey:@"Name"];
-        self.likes = [[dict objectForKey:@"Likes"] integerValue];
-        self.dislikes = [[dict objectForKey:@"Dislikes"] integerValue];
-        
+        int likes = [[dict objectForKey:@"Likes"] integerValue];
+        int dislikes = [[dict objectForKey:@"Dislikes"] integerValue];
+        self.totalVotes = likes + dislikes;
+        self.rating = [self calculateRating:likes withDislikes:dislikes];
+        NSLog(@"Likes: %d, Dislikes: %d, Rating: %f, Votes: %d", likes, dislikes, self.rating, self.totalVotes);
         self.desc = ([dict valueForKey:@"Description"] !=nil)?[dict valueForKey :@"Description"] :@"No desc";
+        /*
+        if([dict objectForKey:@"Liked"]){
+            self.liked = [[dict objectForKey:@"Liked"] boolValue];
+        }
+        if([dict objectForKey:@"Liked"]){
+            self.liked = [[dict objectForKey:@"Liked"] boolValue];
+        }
+         */
         
         if([dict objectForKey:@"Telephone"]){
             self.tel = [dict objectForKey:@"Telephone"];
@@ -91,8 +100,23 @@
         if([dict objectForKey:@"NightlyMinFare"]){
             self.nightlyPerMinute = [[dict objectForKey:@"NightlyMinFare"] doubleValue];
         }
+        if([dict objectForKey:@"Comments"]){
+            self.comments = [CommentModel getModelsFromDictionaries:[dict objectForKey:@"Comments"]];
+        }
     }
     return self;
+}
+
+-(NSData *) toNSData{
+    return nil;
+}
+
+-(double) calculateRating: (int) likes withDislikes: (int) dislikes{
+    if(likes == 0 && dislikes==0){
+        return 0.00;
+    }
+    double rat = likes * 10 / ((double)likes + (double) dislikes);
+    return rat;
 }
 
 +(NSMutableArray *) getModelsFromDictionaries:(NSArray *) dicts{

@@ -44,7 +44,8 @@
 {
     [super viewDidLoad];
     persister.delegate = self;
-    self.title = self.taxi.name;
+    self.title = @"Taxi details";
+    self.nameLabel.text = self.taxi.name;
     [self loadTaxiDetails];
     
     [self.view addSubview:self.loadingDataView];
@@ -56,23 +57,58 @@
 }
 
 -(void) didReceiveData:(NSDictionary *)data withAlias:(NSString *)alias {
-    self.taxi = [[TaxiModel alloc] initWithDictionary:data];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //Remove comment to hide the spinner
-        [self.loadingDataView removeFromSuperview];
-        self.initialDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyInitial];
-        self.perKmDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyPerKm];
-        self.perMinDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyPerMinute];
-        self.bookingDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyBooking];
-        
-        self.initialNIghtlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyInitial];
-        self.perKmNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyPerKm];
-        self.perMinNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyPerMinute];
-        self.bookingNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyBooking];
-        [self.loadingDataView removeFromSuperview];
-    });
+    if([alias isEqualToString:@"taxidetails"]){
+        self.taxi = [[TaxiModel alloc] initWithDictionary:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //Remove comment to hide the spinner
+            [self.loadingDataView removeFromSuperview];
+            
+            self.ratingVotesLabel.text = [NSString stringWithFormat:@"%.2f / %d", self.taxi.rating, self.taxi.totalVotes];
+            
+            self.initialDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyInitial];
+            self.perKmDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyPerKm];
+            self.perMinDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyPerMinute];
+            self.bookingDailyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.dailyBooking];
+            
+            self.initialNIghtlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyInitial];
+            self.perKmNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyPerKm];
+            self.perMinNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyPerMinute];
+            self.bookingNightlyLabel.text = [NSString stringWithFormat:@"%.2f",self.taxi.nightlyBooking];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.loadingDataView removeFromSuperview];
+                self.commentsButton.titleLabel.text = [NSString stringWithFormat:@"View %d comments", self.taxi.comments.count];
+            });
+        });
+    }
+    else if([alias isEqualToString:@"taxiliked"]){
+        NSString *title = @"Taxi liked!";
+        NSString *message = [NSString stringWithFormat:@"%@ successfully liked", self.taxi.name];
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alertView show];
+        });
+    }
+    else if([alias isEqualToString:@"taxidisliked"]){
+        NSString *title = @"Taxi disliked!";
+        NSString *message = [NSString stringWithFormat:@"%@ successfully disliked", self.taxi.name];
+        UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:title message:message delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alertView show];
+        });
+    }
 }
 
+-(void) didHappenedError:(NSDictionary *)error withAlias:(NSString *)alias{
+    if([alias isEqualToString:@"taxiliked"] || [alias isEqualToString:@"taxidisliked"]){
+        UIAlertView *alertView = [[UIAlertView alloc]init];
+        [alertView addButtonWithTitle:@"Ok"];
+        [alertView setTitle:@"Taxi already voted for"];
+        [alertView setMessage:[NSString stringWithFormat:@"You have already voted for %@", self.taxi.name]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [alertView show];
+        });
+    }
+}
 - (IBAction)callTapped:(id)sender{
     //Test on device
     NSString *telStr =[NSString stringWithFormat:@"tel:%@",self.taxi.tel];
@@ -108,10 +144,18 @@
     [alertView show];
 }
 
+- (IBAction)commentsTapped:(id)sender {
+    NSLog(@"Comments tapped");
+}
+
 - (IBAction)likeTapped:(id)sender{
+    NSString *url = [NSString stringWithFormat:@"http://callataxi.apphb.com/api/taxis/%d/like", self.taxi.taxiId];
+    [persister updateDate:url withAlias:@"taxiliked" withData:nil];
 }
 
 - (IBAction)dislikeTapped:(id)sender{
+    NSString *url = [NSString stringWithFormat:@"http://callataxi.apphb.com/api/taxis/%d/dislike", self.taxi.taxiId];
+    [persister updateDate:url withAlias:@"taxidisliked" withData:nil];
 }
 
 -(BOOL) saveTaxiToAddressBook{
@@ -175,6 +219,13 @@
     }
     CFRelease(addressBook);
     return NO;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"taxiCommentsSeque"]){
+        CommentsTableViewController *vm = segue.destinationViewController;
+        vm.taxi = self.taxi;
+    }
 }
 
 - (void)didReceiveMemoryWarning

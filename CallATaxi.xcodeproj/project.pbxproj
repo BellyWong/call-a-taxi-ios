@@ -11,6 +11,8 @@
 		2608CF241865C535000A152E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2608CF231865C535000A152E /* AddressBookUI.framework */; };
 		261809C21870C095003B0FBE /* BaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261809C11870C095003B0FBE /* BaseUIViewController.m */; };
 		261809C51870C3AD003B0FBE /* BaseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 261809C41870C3AD003B0FBE /* BaseUITableViewController.m */; };
+		261809C81873232F003B0FBE /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 261809C71873232F003B0FBE /* CommentModel.m */; };
+		266F05AE187465810000EFEB /* CommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 266F05AD187465810000EFEB /* CommentsTableViewController.m */; };
 		267EEFA51865F8E20072E158 /* DataPersister.m in Sources */ = {isa = PBXBuildFile; fileRef = 267EEFA41865F8E20072E158 /* DataPersister.m */; };
 		26A6EC2A185B6D3000F3BCE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC29185B6D3000F3BCE1 /* Foundation.framework */; };
 		26A6EC2C185B6D3000F3BCE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A6EC2B185B6D3000F3BCE1 /* CoreGraphics.framework */; };
@@ -49,6 +51,10 @@
 		261809C11870C095003B0FBE /* BaseUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUIViewController.m; sourceTree = "<group>"; };
 		261809C31870C3AD003B0FBE /* BaseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUITableViewController.h; sourceTree = "<group>"; };
 		261809C41870C3AD003B0FBE /* BaseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUITableViewController.m; sourceTree = "<group>"; };
+		261809C61873232F003B0FBE /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		261809C71873232F003B0FBE /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		266F05AC187465810000EFEB /* CommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsTableViewController.h; sourceTree = "<group>"; };
+		266F05AD187465810000EFEB /* CommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsTableViewController.m; sourceTree = "<group>"; };
 		267EEFA31865F8E20072E158 /* DataPersister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataPersister.h; sourceTree = "<group>"; };
 		267EEFA41865F8E20072E158 /* DataPersister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataPersister.m; sourceTree = "<group>"; };
 		26A6EC26185B6D3000F3BCE1 /* CallATaxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CallATaxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +165,8 @@
 				261809C11870C095003B0FBE /* BaseUIViewController.m */,
 				261809C31870C3AD003B0FBE /* BaseUITableViewController.h */,
 				261809C41870C3AD003B0FBE /* BaseUITableViewController.m */,
+				266F05AC187465810000EFEB /* CommentsTableViewController.h */,
+				266F05AD187465810000EFEB /* CommentsTableViewController.m */,
 			);
 			path = CallATaxi;
 			sourceTree = "<group>";
@@ -199,6 +207,8 @@
 				26B168F11862ECAA00A9903C /* CityModel.m */,
 				26B168F31862F40C00A9903C /* TaxiModel.h */,
 				26B168F41862F40C00A9903C /* TaxiModel.m */,
+				261809C61873232F003B0FBE /* CommentModel.h */,
+				261809C71873232F003B0FBE /* CommentModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -308,6 +318,8 @@
 				26B168F21862ECAA00A9903C /* CityModel.m in Sources */,
 				267EEFA51865F8E20072E158 /* DataPersister.m in Sources */,
 				26B168F51862F40C00A9903C /* TaxiModel.m in Sources */,
+				266F05AE187465810000EFEB /* CommentsTableViewController.m in Sources */,
+				261809C81873232F003B0FBE /* CommentModel.m in Sources */,
 				261809C21870C095003B0FBE /* BaseUIViewController.m in Sources */,
 				26A6EC60185B6FBC00F3BCE1 /* HomeViewController.m in Sources */,
 			);

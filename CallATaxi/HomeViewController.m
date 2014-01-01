@@ -16,7 +16,6 @@
 
 @implementation HomeViewController
 
-
 @synthesize locationLabel;
 @synthesize cityLabel;
 

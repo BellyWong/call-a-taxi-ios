@@ -7,18 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CommentModel.h"
 
 @interface TaxiModel : NSObject
 
 @property int taxiId;
 @property (strong,nonatomic) NSString *name;
-@property int likes;
-@property int dislikes;
+@property double rating;
+@property int totalVotes;
 @property (strong,nonatomic) NSString *desc;
 @property (strong,nonatomic) NSDictionary *fares;
 @property (strong,nonatomic) NSString *tel;
 @property (strong,nonatomic) NSString *webSite;
 @property (strong,nonatomic) NSString *alreadyLiked;
+@property (strong, nonatomic) NSArray *comments;
 
 @property double dailyBooking;
 @property double dailyInitial;
@@ -53,6 +55,8 @@
 
 -(id) init;
 -(id) initWithDictionary: (NSDictionary *) dict;
+
+-(NSData *) toNSData;
 
 +(NSMutableArray *) getModelsFromDictionaries:(NSArray *) dicts;
 

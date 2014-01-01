@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CommonCrypto/CommonDigest.h>
 #import "DataPersister.h"
 
 @interface BaseUIViewController : UIViewController
